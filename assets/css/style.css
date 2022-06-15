@@ -26,6 +26,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 .header .header-1 {
     background: #fff;
     padding: 1.5rem 9%;
@@ -92,6 +93,26 @@ html {
     display: none;
 }
 
+.loader-container {
+    position: fixed;
+    top:0; left: 0;
+    height:100%;
+    width: 100%;
+    z-index: 10000;
+    background:#f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-container.active {
+    display: none;
+}
+
+.loader-container img {
+    height:15rem;
+}
+
 /* media queries  */
 @media (max-width:991px) {
     .header .header-1 {
@@ -100,6 +121,14 @@ html {
 }
 
 @media (max-width:768px) {
+    html {
+        scroll-padding-top: 0;
+    }
+
+    body {
+        padding-bottom: 6rem;
+    }
+
     #search-btn {
         display: inline-block;
     }
@@ -122,5 +151,7 @@ html {
 }
 
 @media (max-width:450px) {
-
+    html {
+        font-size: 50%;
+    }
 }
