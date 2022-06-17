@@ -208,6 +208,51 @@ html {
     cursor: pointer;
 }
 
+.home {
+    background: url(../image/banner-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .row {
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+
+.home .row .content {
+    flex:1 1 42rem;
+}
+
+.home .row .content h3 {
+    color:var(--black);
+    font-size: 4.5rem;
+}
+
+.home .row .content p {
+    color:var(--light-black);
+    font-size: 1.4rem;
+    line-height: 2;
+    padding:1rem 0;
+}
+
+.btn {
+    margin-top: 1rem;
+    display:inline-block;
+    padding:.9rem 3rem;
+    border-radius: .5rem;
+    color:#fff;
+    background:var(--purple);
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background:var(--dark-purple);
+}
+
 .loader-container {
     position: fixed;
     top:0; left: 0;
@@ -230,8 +275,15 @@ html {
 
 /* media queries  */
 @media (max-width:991px) {
+    html {
+    font-size: 55%;
+}
     .header .header-1 {
         padding:2rem;
+    }
+
+    section {
+        padding:3rem 2rem;
     }
 }
 
@@ -262,6 +314,14 @@ html {
 
     .header .header-1 .search-form.active {
         top:115%;
+    }
+
+    .home .row .content {
+        text-align: center;
+    }
+
+    .home .row .content h3 {
+        font-size: 3.5rem;
     }
 }
 
