@@ -7,7 +7,10 @@
     --dark-purple:#5c00b3bd;
     --border:.1rem solid rgba(0,0,0,.1);
     --border-hover:.1rem solid var(--black);
-
+    --facebook: rgb(66, 103, 178);
+    --twitter: rgb(29, 161, 242);
+    --linkedin: #0072b1;
+    --pinterest: #E60023;
 }
 
 * {
@@ -256,6 +259,25 @@ section {
     flex:1 1 42rem;
 }
 
+.home .row .books-slider {
+    flex:1 1 42rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.home .row .books-slider a img {
+    height: 25rem;
+}
+
+.home .row .books-slider a:hover img {
+    transform: scale(.9);
+}
+
+.home .row .books-slider .stand {
+    width:100%;
+    margin-top: -2rem;
+}
+
 .home .row .content h3 {
     color:var(--black);
     font-size: 4.5rem;
@@ -375,6 +397,60 @@ section {
     color:#fff;
 }
 
+.footer .share {
+    padding:1rem 0;
+    text-align: center;
+}
+
+.footer .share a {
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color:#fff;
+    background:var(--purple);
+    margin:0 .3rem;
+    border-radius: 50%; 
+}
+
+#facebook:hover  {
+    background: var(--facebook);
+}
+
+#twitter:hover  {
+    background: var(--twitter);
+}
+
+#instagram:hover  {
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+#linkedin:hover  {
+    background: var(--linkedin);
+}
+
+#pinterest:hover  {
+    background: var(--pinterest);
+}
+
+.footer .credit {
+    border-top: var(--border);
+    margin-top: 2rem;
+    padding:0 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color:var(--light-black);
+    text-align: center;
+}
+
+.footer .credit span {
+    color:var(--purple);
+}
+
 .loader-container {
     position: fixed;
     top:0; left: 0;
@@ -416,6 +492,10 @@ section {
 
     body {
         padding-bottom: 6rem;
+    }
+
+    .header .header-2 {
+        display:none;
     }
 
     #search-btn {
