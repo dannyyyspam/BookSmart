@@ -23,3 +23,6 @@ function fadeOut(){
 }
 
 fadeOut()
+
+
+This is a test for merging.
