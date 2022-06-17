@@ -51,5 +51,3 @@ var swiper = new Swiper(".featured-slider", {
       },
     },
   });
-
-This is a test for merging.
