@@ -23,3 +23,40 @@ function fadeOut(){
 }
 
 fadeOut()
+
+$(document).ready(function() {
+  var item, title, author, publisher, bookLink, bookImg
+  var outputList = document.getElementById("modal-output")
+  var bookUrl = "https://www.googleapis.com/books/v1/volumes?q="
+  var placeholder = ""
+  var searchData;
+
+  $("#search-btn").click(function () {
+    console.log("hello")
+    outputList.innerHTML = ""
+    searchData = $("#search-box").val()
+    //handeling empty search input field
+    if (searchData === "" || searchData === null) {
+      displayError();
+    }
+    else {
+      $.ajax({
+        url: bookUrl + searchData,
+        dataType: "json",
+        success: function (res) {
+        console.log(res)
+        if (response.totalItem === 0) {
+          alert("No results")
+        }
+        else {
+          displayResults(res)
+        }
+      }
+      })
+    }
+  
+
+
+  })
+  
+})
