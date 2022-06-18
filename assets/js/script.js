@@ -52,11 +52,10 @@ $(document).ready(function() {
           displayResults(res)
         }
       }
+      ,error: function () {
+        alert("Something went wrong!");
+      }
       })
     }
-  
-
-
   })
-  
 })
