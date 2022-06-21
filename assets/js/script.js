@@ -51,3 +51,25 @@ var swiper = new Swiper(".featured-slider", {
       },
     },
   });
+  
+var searchTermHandler = function(event) {
+  event.preventDefault();
+  console.log(event);
+};
+
+var searchInput = document.querySelector("#search-box")
+
+searchInput.addEventListener("submit", searchTermHandler)
+
+var getGoogleBooks = function(searchTerm) {
+
+  var googleBooksApi = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "&key=AIzaSyAecO1RHP641dZIsxWcYpuiCn5gGt5hRQk"
+
+  fetch (googleBooksApi).then(function(response) {
+    response.json().then(function(data) {
+      console.log(data);
+    });
+  });
+
+}
+getGoogleBooks("Python");
