@@ -11,6 +11,14 @@
     --twitter: rgb(29, 161, 242);
     --linkedin: #0072b1;
     --pinterest: #E60023;
+
+    --color-primary: #009579;
+    --color-primary-dark: #007f67;
+    --color-secondary: #252c6a;
+    --color-error: #cc3333;
+    --color-success: #4bb544;
+    --border-radius: 4px;
+
 }
 
 * {
@@ -164,73 +172,109 @@ section {
     z-index: 10000;
     height:100%;
     width:100%;
+    font-size: 18px;
+    background: url(../image/background.jpg);
+    background-size: cover;
 }
 
 .login-form-container.active {
     right:0;
 }
 
-.login-form-container form {
-    background:#fff;
-    border:var(--border);
-    width:40rem;
-    padding:2rem;
-    box-shadow: var(--box-shadow);
-    border-radius: .5rem;
-    margin:2rem;
+.form--hidden {
+    display: none;
 }
 
-.login-form-container form h3 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color:var(--black);
+.form > *:first-child {
+    margin-top: 0;
+}
+
+.form > *:last-child {
+    margin-bottom: 0;
+}
+
+.form__title {
+    margin-bottom: 2rem;
     text-align: center;
 }
 
-.login-form-container form span {
+.form__message {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form__message--success {
+    color: var(--color-success);
+}
+
+.form__message--error {
+    color: var(--color-error);
+}
+
+.form__input-group {
+    margin-bottom: 1rem;
+}
+
+.form__input {
     display: block;
-    font-size: 1.5rem;
-    padding-top: 1rem;
-}
-
-.login-form-container form .box {
     width: 100%;
-    margin:.7rem 0;
-    font-size: 1.6rem;
-    border:var(--border);
-    border-radius: .5rem;
-    padding:1rem 1.2rem;
-    color:var(--black);
-    text-transform: none;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px solid #dddddd;
+    outline: none;
+    background: #eeeeee;
+    transition: background 0.2s, border-color 0.2s;
 }
 
-.login-form-container form .checkbox {
-    display:flex;
-    align-items: center;
-    gap:.5rem;
-    padding:1rem 0;
+.form__input:focus {
+    border-color: var(--color-primary);
+    background: #ffffff;
 }
 
-.login-form-container form .checkbox label {
-    font-size: 1.5rem;
-    color:var(--light-black);
+.form__input--error {
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+.form__input-error-message {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-error);
+}
+
+.form__button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+}
+
+.form__button:hover {
+    background: var(--color-primary-dark);
+}
+
+.form__button:active {
+    transform: scale(0.98);
+}
+
+.form__text {
+    text-align: center;
+}
+
+.form__link {
+    color: var(--color-secondary);
+    text-decoration: none;
     cursor: pointer;
 }
 
-.login-form-container form .btn {
-    text-align: center;
-    width:100%;
-    margin:1.5rem 0;
-}
-
-.login-form-container form p {
-    padding-top: .8rem;
-    color:var(--light-black);
-    font-size: 1.5rem;
-}
-
-.login-form-container form p a {
-    color:var(--purple);
+.form__link:hover {
     text-decoration: underline;
 }
 
@@ -240,6 +284,15 @@ section {
     font-size: 5rem;
     color:var(--black);
     cursor: pointer;
+}
+.login-form-container form {
+    background:#fff;
+    border:var(--border);
+    width:40rem;
+    padding:2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    margin:2rem;
 }
 
 .home {
@@ -451,7 +504,7 @@ section {
     color:var(--purple);
 }
 
-.loader-container {
+/* .loader-container {
     position: fixed;
     top:0; left: 0;
     height:100%;
@@ -469,7 +522,7 @@ section {
 
 .loader-container img {
     height:15rem;
-}
+} */
 
 /* media queries  */
 @media (max-width:991px) {
