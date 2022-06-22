@@ -1,4 +1,5 @@
 searchForm = document.querySelector('.search-form');
+// var searchTerm = document.querySelector('.search-form').value;
 
 document.querySelector('#search-btn').onclick = () =>{
   searchForm.classList.toggle('active');
@@ -22,7 +23,7 @@ function fadeOut(){
     setTimeout(loader, 2000);
 }
 
-fadeOut()
+fadeOut();
 
 var swiper = new Swiper(".featured-slider", {
     spaceBetween: 10,
@@ -51,7 +52,6 @@ var swiper = new Swiper(".featured-slider", {
       },
     },
   });
-  
 var searchTermHandler = function(event) {
   event.preventDefault();
   console.log(event);
@@ -72,4 +72,4 @@ var getGoogleBooks = function(searchTerm) {
   });
 
 }
-getGoogleBooks("Python");
+getGoogleBooks();
