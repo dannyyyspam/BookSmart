@@ -11,14 +11,10 @@
     --twitter: rgb(29, 161, 242);
     --linkedin: #0072b1;
     --pinterest: #E60023;
-
-    --color-primary: #009579;
-    --color-primary-dark: #007f67;
     --color-secondary: #252c6a;
     --color-error: #cc3333;
     --color-success: #4bb544;
     --border-radius: 4px;
-
 }
 
 * {
@@ -193,29 +189,29 @@ section {
     margin-bottom: 0;
 }
 
-.form__title {
+.form-title {
     margin-bottom: 2rem;
     text-align: center;
 }
 
-.form__message {
+.form-message {
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.form__message--success {
+.form-message--success {
     color: var(--color-success);
 }
 
-.form__message--error {
+.form-message--error {
     color: var(--color-error);
 }
 
-.form__input-group {
+.form-input-group {
     margin-bottom: 1rem;
 }
 
-.form__input {
+.form-input {
     display: block;
     width: 100%;
     padding: 0.75rem;
@@ -227,23 +223,23 @@ section {
     transition: background 0.2s, border-color 0.2s;
 }
 
-.form__input:focus {
-    border-color: var(--color-primary);
+.form-input:focus {
+    border-color: var(--purple);
     background: #ffffff;
 }
 
-.form__input--error {
+.form-input--error {
     color: var(--color-error);
     border-color: var(--color-error);
 }
 
-.form__input-error-message {
+.form-input-error-message {
     margin-top: 0.5rem;
     font-size: 0.85rem;
     color: var(--color-error);
 }
 
-.form__button {
+.form-button {
     width: 100%;
     padding: 1rem 2rem;
     font-weight: bold;
@@ -253,28 +249,28 @@ section {
     border-radius: var(--border-radius);
     outline: none;
     cursor: pointer;
-    background: var(--color-primary);
+    background: var(--purple);
 }
 
-.form__button:hover {
-    background: var(--color-primary-dark);
+.form-button:hover {
+    background: var(--dark-purple);
 }
 
-.form__button:active {
+.form-button:active {
     transform: scale(0.98);
 }
 
-.form__text {
+.form-text {
     text-align: center;
 }
 
-.form__link {
+.form-link {
     color: var(--color-secondary);
     text-decoration: none;
     cursor: pointer;
 }
 
-.form__link:hover {
+.form-link:hover {
     text-decoration: underline;
 }
 

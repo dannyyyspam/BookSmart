@@ -15,21 +15,21 @@ document.querySelector("#close-login-btn").onclick = () => {
 };
 
 function setFormMessage(formElement, type, message) {
-  const messageElement = formElement.querySelector(".form__message");
+  const messageElement = formElement.querySelector(".form-message");
 
   messageElement.textContent = message;
-  messageElement.classList.remove("form__message--success", "form__message--error");
-  messageElement.classList.add(`form__message--${type}`);
+  messageElement.classList.remove("form-message--success", "form-message--error");
+  messageElement.classList.add(`form-message--${type}`);
 }
 
 function setInputError(inputElement, message) {
-  inputElement.classList.add("form__input--error");
-  inputElement.parentElement.querySelector(".form__input-error-message").textContent = message;
+  inputElement.classList.add("form-input--error");
+  inputElement.parentElement.querySelector(".form-input-error-message").textContent = message;
 }
 
 function clearInputError(inputElement) {
-  inputElement.classList.remove("form__input--error");
-  inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
+  inputElement.classList.remove("form-input--error");
+  inputElement.parentElement.querySelector(".form-input-error-message").textContent = "";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -56,18 +56,38 @@ document.addEventListener("DOMContentLoaded", () => {
       setFormMessage(loginForm, "error", "Invalid username/password combination");
   });
 
-  document.querySelectorAll(".form__input").forEach(inputElement => {
-      inputElement.addEventListener("blur", e => {
-          if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 7) {
-              setInputError(inputElement, "Username must be at least 7 characters in length");
-          }
-      });
+  // document.querySelectorAll(".form-input").forEach(inputElement => {
+  //     inputElement.addEventListener("blur", e => {
+  //         if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 7) {
+  //             setInputError(inputElement, "Username must be at least 7 characters in length");
+  //         }
+  //     });
 
-      inputElement.addEventListener("input", e => {
-          clearInputError(inputElement);
-      });
-  });
+      // inputElement.addEventListener("input", e => {
+      //     clearInputError(inputElement);
+      // });
+  // });
 });
+
+// Signup function
+function signup(e) {
+  event.preventDefault();
+  // console.log('working');
+
+  var email = document.getElementById("email").value;
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  var user = {
+    email: email,
+    username: username,
+    password: password,
+  };
+
+  var json =  JSON.stringify(user);
+  localStorage.setItem(username, json);
+  console.log("USER ADDED");
+}
 
 // function loader(){
 //   document.querySelector('.loader-container').classList.add('active');
