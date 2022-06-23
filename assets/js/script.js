@@ -33,7 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
   loginForm.addEventListener("submit", e => {
     e.preventDefault();
 
-    // Perform your AJAX/Fetch login
+    var username = document.getElementById("username").value; // username of user you want to log in as
+    var userFromLocalStorage = JSON.parse(localStorage.getItem(username));
+    if(!userFromLocalStorage){
+      console.log('user doesnt exist');
+    }
+    var password = document.getElementById("password").value;
+    if (userFromLocalStorage && userFromLocalStorage.password !== password){
+      console.log('wrong password');
+    } else {
+      console.log('logged in successfully');
+    }
   });
 });
 
@@ -52,6 +62,7 @@ function signup(e) {
     password: password,
   };
 
+  // storing input from register-form
   var json =  JSON.stringify(user);
   localStorage.setItem(username, json);
   console.log("USER ADDED");
