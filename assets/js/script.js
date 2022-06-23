@@ -15,15 +15,15 @@ document.querySelector('#close-login-btn').onclick = () =>{
   loginForm.classList.remove('active');
 }
 
-function loader(){
-    document.querySelector('.loader-container').classList.add('active');
-}
+// function loader(){
+//     document.querySelector('.loader-container').classList.add('active');
+// }
 
-function fadeOut(){
-    setTimeout(loader, 2000);
-}
+// function fadeOut(){
+//     setTimeout(loader, 2000);
+// }
 
-fadeOut();
+// fadeOut();
 
 var swiper = new Swiper(".books-slider", {
     loop:true,
@@ -97,7 +97,7 @@ getGoogleBooks();
 
 var form = document.getElementById('form')
 
-form.addEventListner('submit', function(event){
+form.addEventListener('submit', function(event){
   Event.preventDefault()
 
   var width = document.getElementById('width').value
