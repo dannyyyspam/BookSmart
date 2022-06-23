@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!-- swiper cdn link -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- custom css file link  -->
@@ -17,7 +18,7 @@
         <div class="header-1">
             <a href="#" class="logo"> <i class="fas fa-book"></i> BookSmart </a>
             <form action="" class="search-form">
-                <input type="search" name="q" placeholder="search here..." id="search-box">
+                <input type="text" name="q" placeholder="search here..." id="search-box">
                 <label for="search-box" class="fas fa-search"></label>
             </form>
             
@@ -32,32 +33,64 @@
         <div class="header-2">
             <nav class="navbar">
                 <a href="#home">home</a>
-                <a href="#arrivals">arrivals</a>
+                <a href="#featured">Featured Books</a>
             </nav>
         </div>
     </header>
+    <!-- header section ends -->
 
-    <!-- login form  -->
-    <div class="login-form-container">
+    <!-- login/Sign up form starts  -->
+    <div class="login-form-container" id="container">
         
         <div id="close-login-btn" class="fas fa-times"></div>
         
-        <form action="">
-            <h3>sign in</h3>
-            <span>username</span>
-            <input type="email" name="" class="box" placeholder="enter your email" id="">
-            <span>password</span>
-            <input type="password" name="" class="box" placeholder="enter your password" id="">
-            <div class="checkbox">
-                <input type="checkbox" name="" id="remember-me">
-                <label for="remember-me"> remember me</label>
+        <form class="form" id="login">
+            <h1 class="form-title">Login</h1>
+            <div class="form-message form-message--error"></div>
+            <div class="form-input-group">
+                <input type="text" class="form-input usernm" id="user-login" autofocus placeholder="Username">
+                <div class="form-input-error-message"></div>
             </div>
-            
-            <input type="submit" value="sign in" class="btn">
-            <p>forget password ? <a href="#">click here</a></p>
-            <p>don't have an account ? <a href="#">create one</a></p>
+
+            <div class="form-input-group">
+                <input type="password" class="form-input pass" id="password-login" autofocus placeholder="Password">
+                <div class="form-input-error-message"></div>
+            </div>
+
+            <button class="form-button" type="submit">Continue</button>
+            <p class="form-text">
+                <a href="#" class="form-link">Forgot your password?</a>
+            </p>
+            <p class="form-text">
+                <a class="form-link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+            </p>
+        </form>
+
+        <form onsubmit="signup()" class="form form--hidden" id="createAccount">
+            <h1 class="form-title">Create Account</h1>
+            <div class="form-message form-message--error"></div>
+            <div class="form-input-group">
+                <input type="text" class="username form-input" id="user-signup" autofocus placeholder="Username">
+                <div class="form-input-error-message"></div>
+            </div>
+
+            <div class="form-input-group">
+                <input type="text" class="form-input email" id="email-signup" autofocus placeholder="Email Address">
+                <div class="form-input-error-message"></div>
+            </div>
+
+            <div class="form-input-group">
+                <input type="password" class="form-input password" id="password-signup" autofocus placeholder="Password">
+                <div class="form-input-error-message"></div>
+            </div>
+
+            <button class="form-button" type="submit">Continue</button>
+            <p class="form-text">
+                <a class="form-link" href="./" id="linkLogin">Already have an account? Sign in</a>
+            </p>
         </form>
     </div>
+    <!-- Login/Sign up form ends-->
 
     <!-- home section starts  -->
     <section class="home" id="home">
@@ -68,7 +101,20 @@
                 <a href="#" class="btn">Read more</a>
             </div>
         </div>
+
+        <div class="swiper books-slider">
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide"><img src="./assets/image/book-1.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./assets/image/book-2.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./assets/image/book-3.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./assets/image/book-4.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./assets/image/book-5.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./assets/image/book-6.png" alt=""></a>
+            </div>
+            <img src="./assets/image/stand.png" class="stand" alt="">
+        </div>
     </section>
+    <!-- home section ends  -->
 
     <!-- featured section starts  -->
     <section class="featured" id="featured">
@@ -260,13 +306,41 @@
         </div>
     </section>
     <!-- featured section ends -->
+    
+    <!-- footer section starts  -->
+    <section class="footer">
+        <div class="share">
+            <a href="#" class="fab fa-facebook-f" id="facebook"></a>
+            <a href="#" class="fab fa-twitter" id="twitter"></a>
+            <a href="#" class="fab fa-instagram" id="instagram"></a>
+            <a href="#" class="fab fa-linkedin" id="linkedin"></a>
+            <a href="#" class="fab fa-pinterest" id="pinterest"></a>
+        </div>
+
+        <div class="credit"> created by <span> </span> | <span>&copy</span> all rights reserved! </div>
+
+    </section>
+    
+    <footer>
+        <h1>Random Pic</h1>
+        <div>
+        <form id="form">
+            <input type="number"  id="width">
+            <input type="number"  id="height">
+            <input type="submit"  id="Get Image">
+        </form>
+        <img alt="" id="img">
+    </div>
+    </footer>
+    <!-- footer section ends -->
 
     <!-- loader  -->
-    <div class="loader-container">
+    <!-- <div class="loader-container">
         <img src="./assets/image/loader-img.gif" alt="">
-    </div>
-    
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    </div> -->
+
+    <!-- swiper cdn link -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
     <!-- custom js file link  -->
     <script
@@ -278,5 +352,7 @@
   integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
   crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
+    
 </body>
+
 </html>
