@@ -1,5 +1,6 @@
 searchForm = document.querySelector('.search-form');
-// var searchTerm = document.querySelector('.search-form').value;
+
+var searchTerm = document.querySelector('.search-form').value;
 
 document.querySelector('#search-btn').onclick = () =>{
   searchForm.classList.toggle('active');
@@ -72,6 +73,7 @@ var swiper = new Swiper(".featured-slider", {
       },
     },
   });
+
 var searchTermHandler = function(event) {
   event.preventDefault();
   console.log(event);
@@ -81,9 +83,9 @@ var searchInput = document.querySelector("#search-box")
 
 searchInput.addEventListener("submit", searchTermHandler)
 
-var getGoogleBooks = function(searchTerm) {
+var getGoogleBooks = function(searchInput) {
 
-  var googleBooksApi = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "&key=AIzaSyAecO1RHP641dZIsxWcYpuiCn5gGt5hRQk"
+  var googleBooksApi = "https://www.googleapis.com/books/v1/volumes?q=" + searchInput + "&key=AIzaSyAecO1RHP641dZIsxWcYpuiCn5gGt5hRQk"
 
   fetch (googleBooksApi).then(function(response) {
     response.json().then(function(data) {
@@ -92,4 +94,4 @@ var getGoogleBooks = function(searchTerm) {
   });
 
 }
-getGoogleBooks();
+getGoogleBooks(searchInput);
