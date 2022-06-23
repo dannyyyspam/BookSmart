@@ -97,7 +97,7 @@ getGoogleBooks();
 
 var form = document.getElementById('form')
 
-form.addEventListner( 'submit',function(event){
+form.addEventListner('submit', function(event){
   Event.preventDefault()
 
   var width = document.getElementById('width').value
@@ -108,4 +108,4 @@ form.addEventListner( 'submit',function(event){
   var image = document.getElementById('img')
 
   image.src = url
-})
+}) 
