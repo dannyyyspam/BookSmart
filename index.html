@@ -39,27 +39,58 @@
     </header>
     <!-- header section ends -->
 
-    <!-- login form  -->
-    <div class="login-form-container">
+    <!-- login/Sign up form starts  -->
+    <div class="login-form-container" id="container">
         
         <div id="close-login-btn" class="fas fa-times"></div>
         
-        <form action="">
-            <h3>sign in</h3>
-            <span>username</span>
-            <input type="email" name="" class="box" placeholder="enter your email" id="">
-            <span>password</span>
-            <input type="password" name="" class="box" placeholder="enter your password" id="">
-            <div class="checkbox">
-                <input type="checkbox" name="" id="remember-me">
-                <label for="remember-me"> remember me</label>
+        <form class="form" id="login">
+            <h1 class="form-title">Login</h1>
+            <div class="form-message form-message--error"></div>
+            <div class="form-input-group">
+                <input type="text" class="form-input usernm" id="user-login" autofocus placeholder="Username">
+                <div class="form-input-error-message"></div>
             </div>
-            
-            <input type="submit" value="sign in" class="btn">
-            <p>forget password ? <a href="#">click here</a></p>
-            <p>don't have an account ? <a href="#">create one</a></p>
+
+            <div class="form-input-group">
+                <input type="password" class="form-input pass" id="password-login" autofocus placeholder="Password">
+                <div class="form-input-error-message"></div>
+            </div>
+
+            <button class="form-button" type="submit">Continue</button>
+            <p class="form-text">
+                <a href="#" class="form-link">Forgot your password?</a>
+            </p>
+            <p class="form-text">
+                <a class="form-link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+            </p>
+        </form>
+
+        <form onsubmit="signup()" class="form form--hidden" id="createAccount">
+            <h1 class="form-title">Create Account</h1>
+            <div class="form-message form-message--error"></div>
+            <div class="form-input-group">
+                <input type="text" class="username form-input" id="user-signup" autofocus placeholder="Username">
+                <div class="form-input-error-message"></div>
+            </div>
+
+            <div class="form-input-group">
+                <input type="text" class="form-input email" id="email-signup" autofocus placeholder="Email Address">
+                <div class="form-input-error-message"></div>
+            </div>
+
+            <div class="form-input-group">
+                <input type="password" class="form-input password" id="password-signup" autofocus placeholder="Password">
+                <div class="form-input-error-message"></div>
+            </div>
+
+            <button class="form-button" type="submit">Continue</button>
+            <p class="form-text">
+                <a class="form-link" href="./" id="linkLogin">Already have an account? Sign in</a>
+            </p>
         </form>
     </div>
+    <!-- Login/Sign up form ends-->
 
     <!-- home section starts  -->
     <section class="home" id="home">
@@ -290,7 +321,6 @@
 
     </section>
     
-    <!-- footer section ends -->
     <footer>
         <h1>Random Pic</h1>
         <div>
@@ -302,11 +332,12 @@
         <img alt="" id="img">
     </div>
     </footer>
-    
+    <!-- footer section ends -->
+
     <!-- loader  -->
-    <div class="loader-container">
+    <!-- <div class="loader-container">
         <img src="./assets/image/loader-img.gif" alt="">
-    </div>
+    </div> -->
 
     <!-- swiper cdn link -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
