@@ -72,6 +72,18 @@ var swiper = new Swiper(".featured-slider", {
       },
     },
   });
+
+  var btnvar1 = document.getElementById('btnh1');
+  function Toggle1(){
+  if (btnvar1.style.color =="red") {
+  btnvar1.style.color = "grey"
+    }
+    else{
+   btnvar1.style.color = "red"
+      }
+
+  }
+
 var searchTermHandler = function(event) {
   event.preventDefault();
   console.log(event);
