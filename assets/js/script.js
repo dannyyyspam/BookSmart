@@ -32,17 +32,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loginForm.addEventListener("submit", e => {
     e.preventDefault();
+    var username = document.getElementById("user-login").value;
+    var userFormLocalStorage = JSON.parse(localStorage.getItem(username));
+    var password = document.getElementById("password-login").value;
 
-    var username = document.getElementById("username").value; // username of user you want to log in as
-    var userFromLocalStorage = JSON.parse(localStorage.getItem(username));
-    if(!userFromLocalStorage){
-      console.log('user doesnt exist');
-    }
-    var password = document.getElementById("password").value;
-    if (userFromLocalStorage && userFromLocalStorage.password !== password){
-      console.log('wrong password');
+    if (userFormLocalStorage) {
+      if (userFormLocalStorage.username === username) {
+        if (userFormLocalStorage.password === password) {
+          console.log('Successfully logged in.');
+        } else {
+          console.log('Wrong password.');
+        }
+      } else {
+        console.log('Wrong username.');
+      }
     } else {
-      console.log('logged in successfully');
+      console.log('User doesn\'t exist.');
     }
   });
 });
@@ -52,9 +57,9 @@ function signup(e) {
   event.preventDefault();
   // console.log('working');
 
-  var email = document.getElementById("email").value;
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
+  var email = document.getElementById("email-signup").value;
+  var username = document.getElementById("user-signup").value;
+  var password = document.getElementById("password-signup").value;
 
   var user = {
     email: email,
