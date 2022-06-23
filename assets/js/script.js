@@ -97,7 +97,7 @@ getGoogleBooks();
 
 var form = document.getElementById('form')
 
-form.addEventListner('submit', function(event){
+form.addEventListener('submit', function(event){
   Event.preventDefault()
 
   var width = document.getElementById('width').value
