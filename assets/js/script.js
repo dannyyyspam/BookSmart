@@ -71,7 +71,7 @@ function signup(e) {
   console.log("USER ADDED");
 }
 
-// random pic api 
+// random picture api 
 var form = document.getElementById('form')
 form.addEventListener('submit', function(event){
   Event.preventDefault()
