@@ -29,7 +29,6 @@ THEN it is saved in the localSorage
 # Credits
 
 Created by Daniel A, Austin P, Max A, Hayden C.
-Starter code from: https://www.youtube.com/watch?v=6XmDdIRmg84
 
 ## **_Link URL to GitHub Repository_**
 
